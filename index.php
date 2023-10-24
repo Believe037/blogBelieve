@@ -3,6 +3,10 @@
  * 
  * @package Blog by Believe 
  */
+
+ 
+  
+ 
 get_header();
  ?>
 

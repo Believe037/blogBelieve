@@ -5,11 +5,21 @@
  * @package blogBelieve
  */
 
+if ( ! defined( 'BLOGBELIEVE_DIR_PATH' ) ) {
+    define( 'BLOGBELIEVE_DIR_PATH', untrailingslashit( get_template_directory() ) );
+}
 
 
+require_once BLOGBELIEVE_DIR_PATH . '/Inc/helpers/autoloader.php';
 
+function blogbelieve_get_theme_instance() {}
 
- function blogBelieve_enqueue_scripts(){
+ function blogBelieve_enqueue_scripts() {
+    \BLOGBELIEVE_THEME\Inc\BLOGBELIEVE_THEME::get_instance();
+ }
+
+ blogbelieve_get_theme_instance();
+
 
     // Register Styles.
     wp_register_style( 'styles-css', get_stylesheet_uri(),  [], filemtime( get_template_directory() . '/style.css' ), 'all' );
