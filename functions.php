@@ -12,14 +12,14 @@ if ( ! defined( 'BLOGBELIEVE_DIR_PATH' ) ) {
 
 require_once BLOGBELIEVE_DIR_PATH . '/Inc/helpers/autoloader.php';
 
-function blogbelieve_get_theme_instance() {}
-
- function blogBelieve_enqueue_scripts() {
+function blogbelieve_get_theme_instance(){
     \BLOGBELIEVE_THEME\Inc\BLOGBELIEVE_THEME::get_instance();
- }
+}
 
- blogbelieve_get_theme_instance();
+blogbelieve_get_theme_instance();
 
+// enqueue codes
+ function blogBelieve_enqueue_scripts(){
 
     // Register Styles.
     wp_register_style( 'styles-css', get_stylesheet_uri(),  [], filemtime( get_template_directory() . '/style.css' ), 'all' );
